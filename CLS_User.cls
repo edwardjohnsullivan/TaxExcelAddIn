@@ -14,11 +14,7 @@ Private Sub Class_Initalize()
 'Author: Edward Sullivan edwardjohnsullivan@gmail.com    
 'Purpose: To reinitialize the class "User" if it has not already occoured. 
 
-    If pfBLN_IsCLS_UserInitalized = False Then
-
-    pSUB_CLS_User_Initialization
-    
-    End If
+    If pfBLN_IsCLS_UserInitalized = False Then pSUB_CLS_User_Initialization
 
 End Sub
 
