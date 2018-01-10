@@ -109,7 +109,7 @@ Public Sub pSUB_PerformanceOptions(BLN_TurnOn As Boolean)
             Dim STR_StaticStatusMsg As String
             STR_StaticStatusMsg = "Processing Current Request... Please Wait."
 
-            With FRM_KTCTaxAddinStatus
+            With FRM_TaxAddinStatus
                 .StartUpPosition = 0
                 .Left = Application.Left + (0.5 * Application.Width) - (0.5 * .Width)    ' To ensure center placement
                 .Top = Application.Top + (0.5 * Application.Height) - (0.5 * .Height)    ' To ensure center placement
@@ -130,7 +130,7 @@ Public Sub pSUB_PerformanceOptions(BLN_TurnOn As Boolean)
 
         Case False
 
-            FRM_KTCTaxAddinStatus.Hide
+            FRM_TaxAddinStatus.Hide
 
             With Application
                 .ScreenUpdating = True
@@ -149,7 +149,7 @@ Public Sub pSUB_SetDynamicStatusMsg(STR_Msg As String)
     'Author: Edward Sullivan edwardjohnsullivan@gmail.com
     'Purpose: To update the dynamic status message for use in the Modeless userform that displays during code execution
 
-    With FRM_KTCTaxAddinStatus
+    With FRM_TaxAddinStatus
         .LBL_DynamicStatusMsg = STR_Msg
         .Repaint
     End With
