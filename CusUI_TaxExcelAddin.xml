@@ -1,0 +1,514 @@
+<customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui"> 
+<!-- Author: Edward Sullivan edward.sullivan@kinshiptrustco.com -->
+<!-- Purpose: To create a custom Excel Add-in menu structure for Tax to house various macros used by Tax -->
+
+	<ribbon>
+
+		<tabs>
+
+			<tab id="Tab_Tax" 
+				 label="Tax" 
+				 insertAfterMso="TabHome">
+				
+				<group  id="Group_Tickmarks" 
+						label="Tickmarks">
+				
+					<button id="Button_Insert_Checkmark" 
+							label="Insert Check mark(s)" 
+							size="normal" 
+							onAction="pSUB_InsertCheckmarksRange" 
+							image="Checkmark" 
+							screentip="Click to insert colored check marks into the current selection."
+							supertip="Clicking this button will insert check marks colored based on your organization level into the currently selected range, which can be one cell or a multitude of cells." />
+							
+					<button id="Button_Delete_Checkmark" 
+							label="Delete Check mark(s)" 
+							size="normal" 
+							onAction="pSUB_DeleteCheckmarksRange" 
+							image="Delete" 
+							screentip="Click to delete colored check marks from the current selection."
+							supertip="Clicking this button will delete the check marks colored based on your organization level from the currently selected range. WARNING: this will delete any pictures embedded in the selected range, use with caution." />
+							
+					<button id="Button_Delete_Checkmarks_All" 
+							label="Delete All Check mark(s)" 
+							size="normal" 
+							onAction="SUB_Delete_Checkmarks_All" 
+							image="Delete_All" 
+							screentip="Click to delete all colored check marks from the current sheet"
+							supertip="Clicking this button will delete all check marks from the current sheet. WARNING: This will delete any pictures embedded in the sheet, use with caution." />
+									
+				</group>
+				
+				<group  id="Group_Update_1040" 
+						label="1040 Workpaper Tools">
+
+					<button id="Button_Version_Check_1040" 
+							label="Check Version" 
+							size="normal" 
+							onAction="SUB_VersionCheck1040" 
+							image="Check" 
+							screentip="Click to Check Version of your 1040 Workpaper Set." 
+							supertip="Clicking this button will confirm if you need an update to your 1040 workpaper set or not." />
+
+					<menu   id="Menu_Update_1040"
+							label="1040 Updates"
+							size="normal"
+							itemSize="normal"
+							image="UpgradeIcon"
+							screentip="Click to see 1040 Workpaper Set Updates.">
+
+						<button id="Button_Update_1040_1_2" 
+								label="Update to Version 1.2" 
+								onAction="SUB_Update_1040_1_2" 
+								image="UpgradeIcon" 
+								screentip="Click to Update 1040 Workpaper Set to Version 1.2." 
+								supertip="Please confirm that your 1040 Workpaper Set is compatible with this upgrade before applying the upgrade." />
+
+						<button id="Button_Update_1040_1_3" 
+								label="Update to Version 1.3" 
+								onAction="SUB_Update_1040_1_3" 
+								image="UpgradeIcon" 
+								screentip="Click to Update 1040 Workpaper Set to Version 1.3." 
+								supertip="Please confirm that your 1040 Workpaper Set is compatible with this upgrade before applying the upgrade." />
+
+						<button id="Button_Update_1040_1_4" 
+								label="Update to Version 1.4" 
+								onAction="SUB_Update_1040_1_4" 
+								image="UpgradeIcon" 
+								screentip="Click to Update 1040 Workpaper Set to Version 1.4."
+								supertip="Please confirm that your 1040 Workpaper Set is compatible with this upgrade before applying the upgrade." />
+												
+						<button id="Button_Update_1040_1_5" 
+								label="Update to Version 1.5" 
+								onAction="SUB_Update_1040_1_5" 
+								image="UpgradeIcon" 
+								screentip="Click to Update 1040 Workpaper Set to Version 1.5."
+								supertip="Please confirm that your 1040 Workpaper Set is compatible with this upgrade before applying the upgrade." />
+								
+						<button id="Button_Update_1040_1_6" 
+								label="Update to Version 1.6" 
+								onAction="SUB_Update_1040_1_6" 
+								image="UpgradeIcon" 
+								screentip="Click to Update 1040 Workpaper Set to Version 1.6."
+								supertip="Please confirm that your 1040 Workpaper Set is compatible with this upgrade before applying the upgrade." />
+								
+						<button id="Button_Update_1040_1_7" 
+								label="Update to Version 1.7" 
+								onAction="SUB_Update_1040_1_7" 
+								image="UpgradeIcon" 
+								screentip="Click to Update 1040 Workpaper Set to Version 1.7."
+								supertip="Please confirm that your 1040 Workpaper Set is compatible with this upgrade before applying the upgrade." />
+								
+						<button id="Button_Update_1040_1_8" 
+								label="Update to Version 1.8" 
+								onAction="SUB_Update_1040_1_8" 
+								image="UpgradeIcon" 
+								screentip="Click to Update 1040 Workpaper Set to Version 1.8."
+								supertip="Please confirm that your 1040 Workpaper Set is compatible with this upgrade before applying the upgrade." />
+								
+						<button id="Button_Update_1040_1_9" 
+								label="Update to Version 1.9" 
+								onAction="SUB_CheckUpdate_1040_1_9" 
+								image="UpgradeIcon" 
+								screentip="Click to Update 1040 Workpaper Set to Version 1.9."
+								supertip="Please confirm that your 1040 Workpaper Set is compatible with this upgrade before applying the upgrade." />
+
+						<button id="Button_Update_1040_1_10" 
+								label="Update to Version 1.10" 
+								onAction="SUB_CheckUpdate_1040_1_10" 
+								image="UpgradeIcon" 
+								screentip="Click to Update 1040 Workpaper Set to Version 1.10."
+								supertip="Please confirm that your 1040 Workpaper Set is compatible with this upgrade before applying the upgrade." />
+								
+					</menu>
+
+					<menu   id="Menu_Changelog_1040"
+							label="1040 Changelogs"
+							size="normal"
+							itemSize="normal"
+							image="notebook"
+							screentip="Click to see 1040 Changelogs.">
+
+						<button id="Button_Changelog_1040_1_2" 
+								label="Changelog v1.2"
+								onAction="SUB_OpenWordDoc"
+								image="notebook" 
+								screentip="Click to see the Changelog for Version 1.2." 
+								supertip="Clicking this button will open the Changelog for the Version 1.2 Update to the 1040 Workpaper Set."
+								tag="Changelog1040_1_2" />
+
+						<button id="Button_Changelog_1040_1_3" 
+								label="Changelog v1.3" 
+								onAction="SUB_OpenWordDoc" 
+								image="notebook" 
+								screentip="Click to see the Changelog for Version 1.3."
+								supertip="Clicking this button will open the Changelog for the Version 1.3 Update to the 1040 Workpaper Set."
+								tag="Changelog1040_1_3" />
+
+						<button id="Button_Changelog_1040_1_4" 
+								label="Changelog v1.4" 
+								onAction="SUB_OpenWordDoc" 
+								image="notebook"
+								screentip="Click to see the Changelog for Version 1.4." 
+								supertip="Clicking this button will open the Changelog for the Version 1.4 Update to the 1040 Workpaper Set."
+								tag="Changelog1040_1_4" />
+								
+						<button id="Button_Changelog_1040_1_5" 
+								label="Changelog v1.5" 
+								onAction="SUB_OpenWordDoc" 
+								image="notebook"
+								screentip="Click to see the Changelog for Version 1.5." 
+								supertip="Clicking this button will open the Changelog for the Version 1.5 Update to the 1040 Workpaper Set."
+								tag="Changelog1040_1_5" />
+								
+						<button id="Button_Changelog_1040_1_6" 
+								label="Changelog v1.6" 
+								onAction="SUB_OpenWordDoc" 
+								image="notebook"
+								screentip="Click to see the Changelog for Version 1.6." 
+								supertip="Clicking this button will open the Changelog for the Version 1.6 Update to the 1040 Workpaper Set."
+								tag="Changelog1040_1_6" />
+								
+						<button id="Button_Changelog_1040_1_7" 
+								label="Changelog v1.7" 
+								onAction="SUB_OpenWordDoc" 
+								image="notebook"
+								screentip="Click to see the Changelog for Version 1.7." 
+								supertip="Clicking this button will open the Changelog for the Version 1.7 Update to the 1040 Workpaper Set."
+								tag="Changelog1040_1_7" />
+								
+						<button id="Button_Changelog_1040_1_8" 
+								label="Changelog v1.8" 
+								onAction="SUB_OpenWordDoc" 
+								image="notebook"
+								screentip="Click to see the Changelog for Version 1.8." 
+								supertip="Clicking this button will open the Changelog for the Version 1.8 Update to the 1040 Workpaper Set."
+								tag="Changelog1040_1_8" />
+								
+						<button id="Button_Changelog_1040_1_9" 
+								label="Changelog v1.9" 
+								onAction="SUB_OpenWordDoc" 
+								image="notebook"
+								screentip="Click to see the Changelog for Version 1.9." 
+								supertip="Clicking this button will open the Changelog for the Version 1.9 Update to the 1040 Workpaper Set."
+								tag="Changelog1040_1_9" />
+				
+					</menu>
+
+					<button id="Button_Ext_to_Final" 
+							label="Rollforward Ext. to Final" 
+							size="normal" 
+							onAction="SUB_Roll_ExtensiontoFinal"
+							image="number-one-in-a-circle" 
+							screentip="Click to Copy your extension values to the final columns within this 1040 Workpaper Set." 
+							supertip="Only click this button to roll this 1040 Workpaper Set from Extension to Final. The workpaper should be in 'extension mode', this macro will take all the values in the current extension column, then will copy the values into the currently blank column. It will then change this 1040 Workpaper Set to 'final mode'. This should be done in the copy of your workpapers that is separate from the Extension Copy."/>
+
+					<button id="Button_Prior_Year_Rollforward"
+							label="Rollforward Final to Ext." 
+							size="normal" 
+							onAction="SUB_Roll_FinaltoExtension" 
+							image="number-two-in-a-circle" 
+							screentip="Click to copy the final values to the prior year column." 
+							supertip="Clicking this will copy the final column values to the prior year column. Only do this after you have copied the prior year workbook to the current year." />
+
+					<button id="Button_Fix_Formulas_K1" 
+							label="Fix Formulas K-1 Smry." 
+							size="normal" 
+							onAction="SUB_Fix_Formulas_K1" 
+							image="number-three-in-a-circle" 
+							screentip="Click this button to re-apply the formulas on the K-1 Summary." 
+							supertip="If you copy and pasted values from a K-1 Output Tab, the formulas for the row were removed in the process. This macro will fix them. " />
+											
+					<button id="Button_Auto_Import_K1" 
+							label="Auto-Import K-1's" 
+							size="normal" 
+							onAction="SUB_Auto_Import_K1_Partner" 
+							image="number-four-in-a-circle" 
+							screentip="Click this button to automatically import all available K-1 values." 
+							supertip="Please verify that partner numbers and entity ID's have been entered as needed. Clicking this button will automatically import all available K-1 values from Tax prepared K-1 OUTPUT sheets. This will overwrite any values in the imported rows, but will only overwrite values for which the time stamp of the K-1 OUTPUT is different from the time stamp of the K-1 Summary for already imported K-1 values. "  />
+							
+					<button id="Button_Validate_Entity_ID" 
+							label="Validate Entity ID's" 
+							size="normal" 
+							onAction="SUB_Validate_Entity_ID_List" 
+							image="number-five-in-a-circle" 
+							screentip="Click this button to validate all Entity ID's on this K-1 Summary." 
+							supertip="This will check to see if all the Entity ID's in the Entity ID column of this K-1 summary are on the Entity ID list. If the Entity ID is not on the list, then a pop up window will indicate so, and the text of the invalid Entity ID will turn red. "  />		
+							
+					<button id="Button_Gain_Export" 
+							label="Create Gain Export" 
+							size="normal" 
+							onAction="SUB_Auto_Export_Capital" 
+							image="number-six-in-a-circle" 
+							screentip="Click this button to create ProSystem Capital Gains Export Sheet." 
+							supertip="This will populate a worksheet called 'GAIN EXPORT' that will take all items from the GAIN - LOSS worksheet and put them into a coded format to be able to copy and paste into ProSystem. Code will also select the appropriate range, after running code just press copy, and then paste into ProSystem."  />
+
+				</group>
+
+				<group  id="Group_Update_Entity" 
+					    label="Entity K-1 Output Tools" >
+
+					<button id="Button_Entity_Version_Check" 
+							label="Check Version" 
+							size="normal" 
+							onAction="SUB_VersionCheckEntity" 
+							image="Check" 
+							screentip="Click to Check Version of your Entity K-1 Output Tab." 
+							supertip="Clicking this button will confirm if you need an update to your Entity K-1 Output Worksheet or not." />
+
+					<menu   id="Menu_Update_Entity"
+							label="Entity Updates"
+							size="normal"
+							itemSize="large"
+							image="UpgradeIcon"
+							screentip="Click to see Entity K-1 Output Tab Updates">
+
+						<button id="Button_Update_Entity_1_7" 
+								label="Update to Version 1.7" 
+								onAction="SUB_Update_Entity_1_7" 
+								image="UpgradeIcon" 
+								screentip="Click to Update Entity K-1 Output Worksheet to Version 1.7." 
+								supertip="Please confirm that your Entity K-1 Output Worksheet is compatible with this upgrade before applying the upgrade." />	
+					</menu>
+
+					<menu   id="Menu_Changelog_Entity"
+							label="Entity Changelogs"
+							size="normal"
+							itemSize="normal"
+							image="notebook"
+							screentip="Click to see 1040 Changelogs">
+
+						<button id="Button_Changelog_Entity_1_7" 
+								label="Changelog v1.7" 
+								onAction="SUB_OpenWordDoc" 
+								image="notebook" 
+								screentip="Click to see the Changelog for Version 1.7." 
+								supertip="Clicking this button will open the Changelog for the Version 1.7 Update to the Entity K-1 Output Tab."
+								tag="Changelog1040_1_7" />
+
+					</menu>
+
+					<button id="Button_Insert_Date_Stamps" 
+							label="Insert Date Stamps" 
+							size="normal" 
+							onAction="SUB_Insert_Date_Stamps_K1_Output" 
+							image="number-one-in-a-circle" 
+							screentip="Click this button to insert date stamps to support Automatic K-1 Import Feature." 
+							supertip="Clicking this will insert date stamps as needed into the K-1 Output tab based on the current time and date. This is used in the Automatic Import of K-1 values tool." />
+
+				</group>
+										
+				
+				<group  id="Group_Trust_Tools" 
+						label="Trust Tools">
+						
+					<menu   id="Menu_SummaryForAll_Tools"
+							label="Summary for All Tools"
+							size="normal"
+							itemSize="normal"
+							image="monitor"
+							screentip="Click to see available tools for the Summary for All Workpaper">
+															
+						<button id="Button_Create_LLC_Sheets" 
+								label="Create LLC Worksheets" 
+								onAction="SUB_Create_LLC_Sheets" 
+								image="number-one-in-a-circle" 
+								screentip="Click this button to create LLC worksheets based on SET_LLC_VAR tab." 
+								supertip="Clicking this will create a worksheet for every name that is in the LLC_NAME_LIST range on the SET_LLC_VAR tab, it will not replace already existing sheets." />
+								
+						<button id="Button_Create_Trust_Sheets" 
+								label="Create Trust Worksheets" 
+								onAction="SUB_Create_Trust_Sheets" 
+								image="number-two-in-a-circle" 
+								screentip="Click this button to create Trust worksheets based on SET_TRUST_VAR tab." 
+								supertip="Clicking this will create a worksheet for every name that is in the LLC_TRUST_TEMPLATE_NAME_LIST range on the SET_TRUST_VAR tab, it will not replace already existing sheets." />	
+						
+						<button id="Button_Create_13k_Export" 
+								label="Create 13k Export"  
+								onAction="SUB_Create_13k_Export" 
+								image="number-three-in-a-circle" 
+								screentip="Click this button to create 13k Export for Trusts." 
+								supertip="Clicking this will create a worksheet that contains all 13k entries that come from any LLC Sheets with 13k values in this workbook. Used for ProSystem entry." />	
+						
+					</menu>
+					
+					<button id="Button_Create_CapGain_Export" 
+								label="Create Gain Export"  
+								onAction="SUB_Create_CapGain_Export" 
+								image="number-one-in-a-circle" 
+								screentip="Click this button to create Capital Gains Export for Trusts." 
+								supertip="Clicking this will create a worksheet that contains all capital gain entries that come from the specific investran capital gains detail for tax workpaper. Used for ProSystem entry." />	
+					
+				</group>
+
+				<group  id="Group_General_Tools" 
+						label="General Tools">
+							
+					<button id="Button_Hide_Unused_K1_Entity" 
+							label="Auto Hide Row/Col" 
+							size="normal" 
+							onAction="pSUB_Hide_Select" 
+							image="number-one-in-a-circle" 
+							screentip="Click this button to hide unused rows and columns on supported worksheets." 
+							supertip="Clicking this will hide all applicable unused rows and columns on the following worksheets when selected: &#13;&#13; CHARITABLE &#13; GAIN - LOSS &#13; K-1 SUMMARY &#13; K-1 OUTPUT &#13; K-1 ENTRY &#13; ITEMIZED &#13; NON-PASSIVE &#13; INTEREST &#13; DIVIDEND &#13; U.S. GOV'T &#13; SUMMARY FOR ALL LLC SHEETS &#13; SUMMARY FOR ALL TRUST SHEETS &#13;" />
+
+					<button id="Button_Un_Hide_Unused_K1_Entity" 
+							label="Auto Un-Hide Row/Col" 
+							size="normal" 
+							onAction="pSUB_UnHide_Select" 
+							image="number-two-in-a-circle" 
+							screentip="Click this button to unhide unused rows and columns on supported worksheets." 
+							supertip="Clicking this will unhide all applicable unused rows and columns on the following worksheets when selected: &#13;&#13; CHARITABLE &#13; GAIN - LOSS &#13; K-1 SUMMARY &#13; K-1 OUTPUT &#13; K-1 ENTRY &#13; ITEMIZED &#13; NON-PASSIVE &#13; INTEREST &#13; DIVIDEND &#13; U.S. GOV'T &#13; SUMMARY FOR ALL LLC SHEETS &#13; SUMMARY FOR ALL TRUST SHEETS &#13;" />
+
+					<button id="Button_Tool_ConvertToUppercase" 
+							label="Change Text to Uppercase" 
+							size="normal" 
+							onAction="SUB_Tool_ConvertToUppercase" 
+							image="number-three-in-a-circle" 
+							screentip="Click this button to change ALL text in the current worksheet to Uppercase." 
+							supertip="This macro will convert ALL constants and text in the current worksheet to uppercase, no other changes are made, and formulas remain unaffected. This action cannot be undone so please save your workbook before continuing." />
+							
+					<button id="Button_Tool_PasteValuesOnly" 
+							label="Export Values Only Tab" 
+							size="normal" 
+							onAction="SUB_Tool_PasteValuesOnly" 
+							image="number-four-in-a-circle" 
+							screentip="Click this button to export the current tab to a new workbook values only." 
+							supertip="This macro will copy the current tab with all formatting, but values only, to a new workbook and prompt the user to save." />
+
+					<button id="Button_Tool_UnhideAllSheets" 
+							label="Un-hide All Sheets" 
+							size="normal" 
+							onAction="SUB_Tool_UnhideAllSheets" 
+							image="number-five-in-a-circle" 
+							screentip="Click this button to unhide all hidden sheets in the current workbook." 
+							supertip="This macro will look for all hidden sheets in the current workbook and will unhide them." />
+							
+				</group>
+
+				<group  id="Group_Other" 
+						label="Other" >
+													
+					<button id="Button_Contact_Dev" 
+					label="Contact Developer" 
+					size = "normal"
+					onAction="SUB_Contact_Dev" 
+					image="light-bulb" 
+					screentip="Click to send email to the Developer for Bug Report or Feature Request" />		
+			
+					<menu   id="Menu_About" 
+							label="About" 
+							size="normal"
+							image="agenda"
+							itemSize="normal"
+							screentip="About Menu"
+							supertip="Menu for general items about the Tax Excel Add-In.">
+
+						<button id="Button_Information" 
+								label="Information about Tax Excel Add-In" 
+								onAction="SUB_Information" 
+								image="agenda" 
+								screentip="Click to see information about this Add-in." />
+
+						<menu 	id="Menu_Changelog_Addin"		
+								label="Add-In Changelogs"
+								image="notebook"
+								itemSize="normal"
+								screentip="Click for Changelogs for the Tax Excel Add-in." >
+
+							<button id="Button_Changelog_Addin_1_1"
+									label="Changelog v1.1.0"
+									onAction="SUB_OpenWordDoc"
+									image="notebook"
+									screentip="Click to see the Tax Excel Add-in Version 1.1.0 Changelog."
+									tag="ChangelogAddin_1_1" />
+							
+							<button id="Button_Changelog_Addin_1_2"
+									label="Changelog v1.2.0"
+									onAction="SUB_OpenWordDoc"
+									image="notebook"
+									screentip="Click to see the Tax Excel Add-in Version 1.2.0 Changelog."
+									tag="ChangelogAddin_1_2" />
+									
+							<button id="Button_Changelog_Addin_1_3"
+									label="Changelog v1.3.0"
+									onAction="SUB_OpenWordDoc"
+									image="notebook"
+									screentip="Click to see the Tax Excel Add-in Version 1.3.0 Changelog."
+									tag="ChangelogAddin_1_3" />		
+									
+							<button id="Button_Changelog_Addin_1_4"
+									label="Changelog v1.4.0"
+									onAction="SUB_OpenWordDoc"
+									image="notebook"
+									screentip="Click to see the Tax Excel Add-in Version 1.4.0 Changelog."
+									tag="ChangelogAddin_1_4" />		
+									
+							<button id="Button_Changelog_Addin_1_5"
+									label="Changelog v1.5.0"
+									onAction="SUB_OpenWordDoc"
+									image="notebook"
+									screentip="Click to see the Tax Excel Add-in Version 1.5.0 Changelog."
+									tag="ChangelogAddin_1_5" />
+							
+							<button id="Button_Changelog_Addin_1_6"
+									label="Changelog v1.6.0"
+									onAction="SUB_OpenWordDoc"
+									image="notebook"
+									screentip="Click to see the Tax Excel Add-in Version 1.6.0 Changelog."
+									tag="ChangelogAddin_1_6" />
+									
+							<button id="Button_Changelog_Addin_1_7"
+									label="Changelog v1.7.0"
+									onAction="SUB_OpenWordDoc"
+									image="notebook"
+									screentip="Click to see the Tax Excel Add-in Version 1.7.0 Changelog."
+									tag="ChangelogAddin_1_7" />
+									
+							<button id="Button_Changelog_Addin_1_8"
+									label="Changelog v1.8.0"
+									onAction="SUB_OpenWordDoc"
+									image="notebook"
+									screentip="Click to see the Tax Excel Add-in Version 1.8.0 Changelog."
+									tag="ChangelogAddin_1_8" />
+
+							<button id="Button_Changelog_Addin_1_9"
+									label="Changelog v1.9.0"
+									onAction="SUB_OpenWordDoc"
+									image="notebook"
+									screentip="Click to see the Tax Excel Add-in Version 1.9.0 Changelog."
+									tag="ChangelogAddin_1_9" />					
+																
+							<button id="Button_Changelog_Addin_2_0"
+									label="Changelog v2.0.0"
+									onAction="SUB_OpenWordDoc"
+									image="notebook"
+									screentip="Click to see the Tax Excel Add-in Version 2.0.0 Changelog."
+									tag="ChangelogAddin_2_0" />	
+
+
+						</menu>
+
+						<button id="Button_Best_Practices_1040" 
+								label="1040 Workpaper Best Practices" 
+								onAction="SUB_OpenWordDoc"
+								image="documentation" 
+								screentip="Click to view 1040 Workpaper Best Practices." />	
+
+						<button id="Button_Best_Practices_Entity" 
+								label="Entity K-1 Output Best Practices" 
+								onAction="SUB_OpenWordDoc" 
+								image="documentation" 
+								screentip="Click to view Entity K-1 Output Tab Best Practices." />
+
+					</menu>	
+
+				</group>
+
+			</tab>
+
+		</tabs>
+
+	</ribbon>
+
+</customUI>
